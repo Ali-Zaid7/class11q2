@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-Commerce UI Kit
 
-## Getting Started
+A **React** and **Next.js** based ecommerce user interface kit designed for rapid and modular development. The project includes a clean design template with pre-built components, content blocks, and layouts, making it easy to develop professional-grade ecommerce websites.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Responsive Design**: Optimized for both mobile and desktop devices.
+- **Pre-built Components**: Ready-to-use UI components like buttons, headings, and content blocks.
+- **Figma Integration**: Design consistency with reusable styles like typography, colors, and elevations.
+- **Customizable Layouts**: Easily modify and adapt layouts for different sections such as hero sections, CTAs, and pricing.
+- **Mobile-First Approach**: Designed with mobile responsiveness in mind.
+  
+## 📂 Project Structure
+
+```plaintext
+├── components/
+│   └── button.tsx         # Button component with props
+├── app/
+│   └── page.tsx           # Home page with grid layout and buttons
+├── public/
+│   └── image/             # Static assets like SVG images (chair.svg, bulb.svg, etc.)
+└── README.md              # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 🧩 Components Overview
+Button Component (components/button.tsx)
+This component accepts a name prop and renders a button with the provided name.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+"use client";
+import React from "react";
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+const button = (props: { name?: string }) => {
+  console.log("Props ===>", props);
+  return <div>{props.name}</div>;
+};
 
-## Learn More
+export default button;
+```
 
-To learn more about Next.js, take a look at the following resources:
+# Home Page (app/page.tsx)
+The Home page uses the button component to display various button options, demonstrating the reusable nature of the component. You can customize the button text by passing the name prop.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+import button from "../../components/button";
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+function Home() {
+  return (
+    <div>
+      <button name="Subscribe" />
+      <button name="Follow me" />
+      <button name="My Youtube Channel" />
+    </div>
+  );
+}
 
-## Deploy on Vercel
+export default Home;
+```
+# 🖼️ Design Highlights
+Hero Section
+The project features a clean hero section with centered text and images aligned in a grid format:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+<header className="text-center justify-center max:ml-6 ">
+  <h1 className="pt-[146px] text-2xl text-[#8F94FF]">JUST UX</h1>
+  <h1 className="mt-2 pt-2 font-[700] text-4xl text-[#FFFFFF]">
+    ecommerce<br /> user interface kit
+  </h1>
+</header>
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Responsive Layout
+The project is optimized for mobile, with various breakpoints ensuring the layout adapts well to smaller screen sizes.
+
+# 🤝 Contributing
+Contributions are welcome! If you have any suggestions, feel free to open an issue or submit a pull request.
